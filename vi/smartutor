@@ -1,0 +1,154 @@
+________________________________________________________________________________
+|                                                                              |
+|                          Smartutor VI taught right                           |
+|______________________________________________________________________________|
+
+VI stands for VIsual editor that focuses on chaining different types of 
+commands together, this tutorial plans to teach you basic vi. but all of this
+works in vim and vis, anything that doesn't work in basic vi implementations
+will be noted.
+
+you can use the useful vi cheatsheet to refresh after reading this tutorial.
+________________________________________________________________________________
+
+                              Moving your cursor
+
+you can move around in normal mode with the hjkl keys.
+h is left.
+j is down.
+k is up.
+l is right.
+________________________________________________________________________________
+
+                                  Exiting VI
+
+to save an exit simply press ZZ, to exit without saving, press ZQ.
+the above may not work in simpler vi like busybox and toybox.
+the alternative is :wq for write quit, :w for write, :q for quit, and :q! for
+force quit.
+________________________________________________________________________________
+
+                             Exiting to Normal Mode
+
+you can exit to normal mode at any time by pressing escape.
+________________________________________________________________________________
+
+                                Movement Commands
+
+w goes forward to next word
+b goes backwards to last word
+e goes to end of next word
+$ and [end] goes to end of line
+0 and [home] goes to beginning of line
+H goes to top of screen
+M goes to middle of screen
+L goes to bottom of screen
++ and [enter] to first character of next line
+- to first character of last line
+^ or _ to first non blank character
+( to beginning of the current sentence
+) to beginning of the next sentence
+{ to beginning of the current paragraph
+} to beginning of the next paragraph
+[[ to beginning of current section
+]] tp beginning of next section
+________________________________________________________________________________
+
+                                Deletion Commands
+
+select a character you want to delete like this tygpo and press x to delete it.
+
+you can combine the d command with movement commands like so,
+delete a misplaced word like this one one with dw.
+or delete the garbage on the end of this line with d$ dasnaefnasfaefaqsfasd
+
+you can delete until the end of the line with just D as well.
+
+asdnaofnasdoansdan
+you can delete an entire line with dd.
+________________________________________________________________________________
+
+                              Change/Replace Commands
+
+select a character you want to replace and press r like in this tylo.
+
+adnaofanf
+you can replace an entire line with R replace this one with "vi is great"
+
+you can combine the c command with movement commands like so,
+change a typoed word like this oen with cw.
+
+you can use C to change until end of the line.
+
+you can replace a character and keep typing with s fix this dpo.
+
+you can replace an entire line with S
+________________________________________________________________________________
+
+                                Insertion Commands
+
+if you press the a key you will enter insert mode after the character you had
+selected, you can essentially type like a normal editor in insert mode press
+esc to exit.
+
+if you press i you will be in insert mode before the character you had selected.
+
+if you press o you will be in insert mode on a new line below your cursor.
+
+if you press A you will be in insert mode at the end of a line.
+
+if you press I you will be in insert mode at the beginning of a line.
+
+if you press O you will be in insert mode on a new line above your cursor.
+________________________________________________________________________________
+
+                                  Count Commands
+
+you can type a number before any command to repeat it for example 10x deletes 10
+characters, or 10oESC creates 10 new lines.
+________________________________________________________________________________
+
+                                   Undo Command
+
+press u to undo the last command (some more basic vi's do not have undo)
+________________________________________________________________________________
+
+                                   Put  Command
+
+p pastes whatever is in your register usually this is your last deletion command
+________________________________________________________________________________
+
+                                   Yank Command
+
+y lets you put a line in your register without deleting it.
+yw yanks a word.
+yy yanks a line.
+works with all your basic motions.
+________________________________________________________________________________
+
+                                   Repeat Command
+
+you can repeat the last command you did just by pressing .
+________________________________________________________________________________
+
+                                    Join Command
+
+J joins the current line with the next line.
+
+press J here to
+ join these two lines together.
+________________________________________________________________________________
+
+                                 Screen Movement
+
+^f moves forwards a screen.
+^b moves backwards a screen.
+^d moves down half a screen.
+^u moves up half a screen.
+^e moves down one line.
+^y moves up one line.
+z[enter] or zt snaps screen to put cursor on top.
+z. or zz snaps screen to put cursor centered.
+z- or zb snaps screen to put cursor on bottom.
+/ searches and finds text.
+________________________________________________________________________________

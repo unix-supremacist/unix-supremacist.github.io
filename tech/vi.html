@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<title>Unix Supremacist's Website</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="../styles.css">
+	</head>
+
+	<body>
+		<header>
+			<a href="../" class="logo">#</a>
+			<input class="side-menu" type="checkbox" id="side-menu"/>
+			<label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
+			 <nav>
+				<ul class="menu">
+					<li><a href="../tech/websites">Cool Websites</a></li>
+					<li><a href="../tech/linuxguide">Unix Software</a></li>
+					<li><a href="../tech/vi">Smartutor</a></li>
+					<li><a href="../tech/config">Configuration</a></li>
+					<li><a href="../gaming/visualnovels">Visual Novels</a></li>
+					<li><a href="../gaming/game">Games</a></li>
+					<li><a href="../gaming/linuxgaming">Unix Gaming</a></li>
+					<li><a href="../media/anime">Anime</a></li>
+					<li><a href="../media/manga">Manga</a></li>
+					<li><a href="../media/youtube">Cool Videos</a></li>
+				</ul>
+			</nav>
+		</header>
+		<img src="../img/index.png" alt="banner">
+
+		<section>
+			<p>
+				VI stands for VIsual editor that focuses on chaining different types of
+				commands together, this tutorial plans to teach you basic vi. but all of this
+				works in vim and vis, anything that doesn't work in basic vi implementations
+				will be noted.
+			</p>
+
+			<p>you can use the useful vi cheatsheet to refresh after reading this tutorial.</p>
+
+			<h2>Moving your cursor</h2>
+			<p>you can move around in normal mode with the hjkl keys.</p>
+			<p><kbd>h</kbd> is left.</p>
+			<p><kbd>j</kbd> is down.</p>
+			<p><kbd>k</kbd> is up.</p>
+			<p><kbd>l</kbd> is right.</p>
+
+			<h2>Exiting VI</h2>
+			<p>to save an exit simply press <kbd>ZZ</kbd>, to exit without saving, press <kbd>ZQ</kbd>.</p>
+			<p>the above may not work in simpler vi like busybox and toybox.</p>
+			<p>the alternative is <kbd>:wq</kbd> for write quit, <kbd>:w</kbd> for write, <kbd>:q</kbd> for quit, and <kbd>:q!</kbd> for force quit.</p>
+
+			<h2>Exiting to Normal Mode</h2>
+			<p>you can exit to normal mode at any time by pressing <kbd>escape.</p>
+
+			<h2>Movement Commands</h2>
+			<p><kbd>w</kbd> goes forward to next word</p>
+			<p><kbd>b</kbd> goes backwards to last word</p>
+			<p><kbd>e</kbd> goes to end of next word</p>
+			<p><kbd>%</kbd> and <kbd>end</kbd> goes to end of line</p>
+			<p><kbd>0</kbd> and <kbd>home</kbd> goes to beginning of line</p>
+			<p><kbd>H</kbd> goes to top of screen</p>
+			<p><kbd>M</kbd> goes to middle of screen</p>
+			<p><kbd>L</kbd> goes to bottom of screen</p>
+			<p><kbd>+</kbd> and <kbd>enter</kbd> to first character of next line</p>
+			<p><kbd>-</kbd> to first character of last line</p>
+			<p><kbd>^</kbd> or <kbd>_</kbd> to first non blank character</p>
+			<p><kbd>(</kbd> to beginning of the current sentence</p>
+			<p><kbd>)</kbd> to beginning of the next sentence</p>
+			<p><kbd>{</kbd> to beginning of the current paragraph</p>
+			<p><kbd>}</kbd> to beginning of the next paragraph</p>
+			<p><kbd>[[</kbd> to beginning of current section</p>
+			<p><kbd>]]</kbd> tp beginning of next section</p>
+
+			<h2>Deletion Commands</h2>
+			<p>select a character you want to delete and press <kbd>x</kbd> to delete it.</p>
+
+			<p>
+				you can combine the <kbd>d</kbd> command with movement command like the following examples,
+				delete a misplaced word with <kbd>dw</kbd>, or delete the garbage at the end of a line with <kbd>d$</kbd>.
+			</p>
+
+			<p>you can delete until the end of the line with just <kbd>D</kbd> as well.</p>
+			<p>you can delete an entire line with <kbd>dd</kbd>.</p>
+
+			<h2>Change/Replace Commands</h2>
+			<p>select a character you want to replace and press <kbd>r</kbd>.</p>
+			<p>you can replace an entire line with <kbd>R</kbd>.</p>
+
+			<p>
+				you can combine the <kbd>c</kbd> command with movement commands like so,
+				change a word with <kbd>cw</kbd>.
+			</p>
+
+			<p>you can use <kbd>C</kbd> to change until end of the line.</p>
+			<p>you can replace a character and keep typing with <kbd>s</kbd>.</p>
+			<p>you can replace an entire line with <kbd>S</kbd>.</p>
+
+			<h2>Insertion Commands</h2>
+			<p>
+				if you press the <kbd>a</kbd> key you will enter insert mode after the character you had
+				selected, you can essentially type like a normal editor in insert mode press
+				esc to exit.
+			</p>
+
+			<p>if you press <kbd>i</kbd> you will be in insert mode before the character you had selected.</p>
+			<p>if you press <kbd>o</kbd> you will be in insert mode on a new line below your cursor.</p>
+			<p>if you press <kbd>A</kbd> you will be in insert mode at the end of a line.</p>
+			<p>if you press <kbd>I</kbd> you will be in insert mode at the beginning of a line.</p>
+			<p>if you press <kbd>O</kbd> you will be in insert mode on a new line above your cursor.</p>
+
+			<h2>Count Commands</h2>
+			<p>
+				you can type a number before any command to repeat it for example 10x deletes 10
+				characters, or <kbd>10oESC</kbd> creates 10 new lines.
+			</p>
+
+			<h2>Undo Command</h2>
+			<p>press <kbd>u</kbd> to undo the last command (some more basic vi's do not have undo)</p>
+
+			<h2>Put Command</h2>
+			<p><kbd>p</kbd> pastes whatever is in your register usually this is your last deletion command</p>
+
+			<h2>Yank Command</h2>
+			<p><kbd>y</kbd> lets you put a line in your register without deleting it.</p>
+			<p><kbd>yw</kbd> yanks a word.</p>
+			<p><kbd>yy</kbd> yanks a line.</p>
+			<p>works with all your basic motions.</p>
+
+			<h2>Repeat Command</h2>
+			<p>you can repeat the last command you did just by pressing <kbd>.</kbd></p>
+
+			<h2>Join Command</h2>
+			<p><kbd>J</kbd> joins the current line with the next line.</p>
+
+			<h2> Screen Movement</h2>
+			<p><kbd>^f</kbd> moves forwards a screen.</p>
+			<p><kbd>^b</kbd> moves backwards a screen.</p>
+			<p><kbd>^d</kbd> moves down half a screen.</p>
+			<p><kbd>^u</kbd> moves up half a screen.</p>
+			<p><kbd>^e</kbd> moves down one line.</p>
+			<p><kbd>^y</kbd> moves up one line.</p>
+			<p><kbd>z enter</kbd> or zt snaps screen to put cursor on top.</p>
+			<p><kbd>z.</kbd> or zz snaps screen to put cursor centered.</p>
+			<p><kbd>z-</kbd> or zb snaps screen to put cursor on bottom.</p>
+			<p><kbd>/</kbd> searches and finds text.</p>
+		</section>
+
+		<section>
+			<h2>Downloads</h2>
+			<a href="../vi/smartutor">smartutor</a><p>plaintext version of this tutorial for use in VI.</p>
+			<a href="../vi/usefulvi">usefulvi</a><p>VI Cheatsheet.</p>
+		</section>
+		<footer>
+			<a href="https://github.com/unix-supremacist/unix-supremacist.github.io">Source</a>
+			<a href="https://matrix.to/#/#the-federation:matrix.thisisjoes.site">Matrix</a>
+			<a href="https://unix-supermacist.github.io/rss.xml">Rss</a>
+			<a href="https://poa.st/@unix-supremacist">Poa.st</a>
+			<a href="https://odysee.com/@unix-supremacist:1?r=Fv3nZdM45aDCrjUYPmH1K3tR8tB3p8wc">Odysee</a>
+		</footer>
+	</body>
+
+</html>

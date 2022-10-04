@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<title>Unix Supremacist's Website</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="../styles.css">
+	</head>
+
+	<body>
+		<header>
+			<a href="../" class="logo">#</a>
+			<input class="side-menu" type="checkbox" id="side-menu"/>
+			<label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
+			 <nav>
+				<ul class="menu">
+					<li><a href="../tech/websites">Cool Websites</a></li>
+					<li><a href="../tech/linuxguide">Unix Software</a></li>
+					<li><a href="../tech/vi">Smartutor</a></li>
+					<li><a href="../tech/config">Configuration</a></li>
+					<li><a href="../gaming/visualnovels">Visual Novels</a></li>
+					<li><a href="../gaming/game">Games</a></li>
+					<li><a href="../gaming/linuxgaming">Unix Gaming</a></li>
+					<li><a href="../media/anime">Anime</a></li>
+					<li><a href="../media/manga">Manga</a></li>
+					<li><a href="../media/youtube">Cool Videos</a></li>
+				</ul>
+			</nav>
+		</header>
+		<img src="../img/ttw.png" alt="banner">
+
+		<section>
+			<h2>What is this?</h2>
+			<p>this will be a simple no bullshit guide to installing TTW, some basic mods.</p>	
+			<p>this will all be done on linux and assume you have the gog versions of the games with all dlc.</p>
+				
+			<p>
+				this also will not be a guide to replace, say, the best of times, because i'll assume you are a
+				adept computer user, and again, that you aren't using windows. though windows has very little
+				differences.
+			</p>
+
+			<p>before you start the guide, run each of the games once to be sure all files are generated.</p>
+		</section>
+		
+		<section>
+			<h2>Mod Organizer and TTW</h2>
+			<p>
+				Mod Organizer is a tool we use to install mods, using a Virtual File System (aka VFS) to
+				install mods without damaging our games installs, download the 7z from 
+				<a href="https://github.com/ModOrganizer2/modorganizer/releases/latest">here</a>
+			</p>
+			
+			<p>
+				check out my linux gaming guide to install and configure wine if you have not
+				(how the fuck did you install f3/fnv on linux without doing that?),
+				then run the mo2 executable.
+			</p>
+			
+			<p>create a portable instance, it should detect your gog install, select ttw.</p>
+			
+			<p>
+				if it asks you where to keep the profile, put this in whatever location you want your mods
+				installed to, for example mine is in <code>~/Games/TTW</code>.
+			</p>
+			
+			<p>disable <code>FalloutNV_lang.esp</code> on the plugins tab on the right side of MO2.</p>
+			
+			<p>now go to the puzzle icon at the top of mo2 and open the ini editor, paste the following.</p>
+			
+			<code>
+				<br>[General]
+				<br>bUseThreadedAI=1
+				<br>iNumHWThreads=2
+				<br>bPreemptivelyUnloadCells=1
+				<br>
+				<br>[BackgroundLoad]
+				<br>bBackgroundCellLoads=1
+				<br>bSelectivePurgeUnusedOnFastTravel=1
+				<br>
+				<br>[Display]
+				<br>bFull Screen=1
+				<br>[Grass]
+				<br>fGrassStartFadeDistance=7000
+				<br>
+				<br>[Controls]
+				<br>fForegroundMouseAccelBase=0
+				<br>fForegroundMouseAccelTop=0
+				<br>fForegroundMouseBase=0
+				<br>fForegroundMouseMult=0
+				<br>
+				<br>[Audio]
+				<br>iAudioCacheSize=8192
+				<br>iMaxSizeForCachedSound=1024
+				<br>
+				<br>[Archive]
+				<br>SArchiveList=Fallout - Invalidation.bsa, Fallout - Textures.bsa, Fallout - Textures2.bsa, Fallout - Meshes.bsa, Fallout - Meshes2.bsa, Fallout - Voices1.bsa, Fallout - Sound.bsa, Fallout - Misc.bsa
+			</code>
+			
+			<p>download ttw 3.2, 3.2.1 and 3.2.2 from <a href="https://taleoftwowastelands.com/dl">here</a>.</p>
+			
+			<p>extract the 3.2 to a new folder, and then extract the other updates to the same folder.</p>
+			
+			<p>
+				open a terminal where you have the installer and run, <code>wine TTW\ Install.exe -NoOggEnc2</code>
+				select the versions in order, and continue into the installer, note, you need to
+				set it to install ttw, and select ttw where you put your MO2 folder, for example i had to bPreemptivelyUnloadCells
+				<code>~/Games/TTW/mods/TTW/</code>, the installer is self explanatory.
+			</p>
+			
+			<p>
+				download TTW wrist fix from <a href="https://taleoftwowastelands.com/viewtopic.php?t=8439">here</a>
+				install it by the disc button on mo2, then naming it TTW to merge it into your main TTW mod.
+			</p>
+			
+			<p>
+				download NVMIM from <a href="https://www.nexusmods.com/newvegas/mods/74295?tab=files">here</a>,
+				install it as before, and also merge this mod into ttw, because it will be included in the next
+				major version of ttw.
+			</p>
+			
+			<p>
+				once done, activate in mo2, boot the game with mo and test it out, TTW it self should be installed, note some audio might crackle,
+				will be fixed later in the guide.
+			</p>
+		</section>
+		
+		<section>
+			<h2>NVSE Plugins</h2>
+			<p>this section will cover nvse plugins, or in laymen terms, engine mods.</p>
+			
+			<p>
+				first we need to update the NVSE that came with ttw though, download nvse from 
+				<a href="https://github.com/xNVSE/NVSE/releases/latest">here</a> and then overwrite
+				the files in your fallout new vegas installation with these.
+			</p>
+			
+			<p>
+				download JIP ln from <a href="https://github.com/jazzisparis/JIP-LN-NVSE/releases/latest">here</a>,
+				and make sure it overwrites TTW on the left pane, don't merge mods from this point on with TTW.
+			</p>
+			
+			<p>
+				download johnny guitar NVSE from <a href="https://github.com/carxt/JohnnyGuitarNVSE/releases/latest">here</a>
+				and install it in the same manor
+			</p>
+			
+			<h3>
+				WARNING THE REST OF THESE NVSE PLUGINS WILL REQUIRE A NEXUS ACCOUNT, I DON'T LIKE IT AS MUCH AS YOU
+				BUT ITS UP TO THESE MOD AUTHORS TO UPLOAD ELSEWHERE.
+			</h3>
+			
+			<p>these mods aren't necessary but will make the gameplay experience smoother and more stable.</p>
+			<p>you will need stewietweaks to fix audio crackling though.</p>
+			
+			<p>
+				download nvac from <a href="https://www.nexusmods.com/newvegas/mods/53635?tab=files">here</a>,
+				using the manual download on nexus from this point on, and install as before.
+			</p>
+			
+			<p>
+				download nvtf from <a href="https://www.nexusmods.com/newvegas/mods/66537?tab=files">here</a>,
+				and install as before.
+			</p>
+			
+			<p>
+				download nvhr from <a href="https://www.nexusmods.com/newvegas/mods/69779?tab=files">here</a>,
+				and install as before.
+			</p>
+			
+			<p>
+				download FNV Mod Limit Fix from <a href="https://www.nexusmods.com/newvegas/mods/68714?tab=files">here</a>,
+				and install as before.
+			</p>
+			
+			<p>
+				download Infinite Loading Screen Fix from <a href="https://www.nexusmods.com/newvegas/mods/70964?tab=files">here</a>,
+				and install as before.
+			</p>
+			
+			<p>
+				download Improved Lighting Shaders from <a href="https://www.nexusmods.com/newvegas/mods/69833?tab=files">here</a>,
+				and install as before.
+			</p>
+			
+			<p>
+				download Console Paste Support from <a href="https://www.nexusmods.com/newvegas/mods/65906?tab=files">here</a>,
+				and install as before.
+			</p>
+			
+			<p>
+				download Improved Console from <a href="https://www.nexusmods.com/newvegas/mods/70801?tab=files">here</a>,
+				and install as before.
+			</p>
+			
+			<p>
+				download OneTweak from <a href="https://www.nexusmods.com/skyrim/mods/40706?tab=files">here</a>,
+				and install as before, do note the default config will do borderless fullscreen which crashes on Linux,
+				like windowed mode by default, set <code>BorderlessWindow</code> to false if you don't use my configs.
+			</p>
+			
+			<p>
+				download yUI from <a href="https://www.nexusmods.com/newvegas/mods/74357?tab=files">here</a>,
+				and install as before.
+			</p>
+			
+			<p>
+				download yGTM from <a href="https://www.nexusmods.com/newvegas/mods/72784?tab=files">here</a>,
+				and install as before, note you technically dont have to have this if you install JAM later,
+				but id rather install it separately for updates.
+			</p>
+			
+			<p>
+				download UIO from <a href="https://www.nexusmods.com/newvegas/mods/57174?tab=files">here</a>,
+				and install as before.
+			</p>
+			
+			<p>
+				if you care about discord, download Discord Rich Presence from
+				<a href="https://www.nexusmods.com/newvegas/mods/68976?tab=files">here</a>,
+				and install as before, this probably doesn't even work on linux.
+			</p>
+			
+			<p>
+				now to our final plugin, and the one required for most configuration and the audio fix.
+				download lStewieAl's Tweaks from <a href="https://www.nexusmods.com/newvegas/mods/66347?tab=files">here</a>,
+				and install as before, if you don't plan to download my hardcore configs later, download the ini
+				from the optional files.
+			</p>
+		</section>
+		
+		<section>
+			<h2>Normal Mods</h2>
+			<p>
+				download ySI from <a href="https://www.nexusmods.com/newvegas/mods/74358?tab=files">here</a>,
+				this will add sorting icons to your inventory, make sure you install yUI first, set
+				<code>bSortingIcons</code> to 1, in the yUI,ini if you don't use my configs.
+			</p>
+			
+			<p>
+				download MCM and the bugfix update from <a href="https://www.nexusmods.com/newvegas/mods/42507?tab=files">here</a>,
+				and install both with the same name on mo2.
+			</p>
+			
+			<p>
+				download DarnUI from <a href="https://taleoftwowastelands.com/viewtopic.php?f=55&t=7284">here</a>,
+				as well as the MCM matches HUD, note you don't need a nexus account for this one, but you do for MCM
+				to configure it.
+			</p>
+			
+			<p>
+				download Anniversary Anim Pack from <a href="https://www.nexusmods.com/newvegas/mods/70158?tab=files">here</a>,
+				as well as the ttw file, and install them under the same name.
+			</p>
+			
+			<p>
+				download Just Mods Assorted from <a href="https://www.nexusmods.com/newvegas/mods/66666?tab=files">here</a>,
+				and install as before.
+			</p>
+			
+			<p>
+				download BLEED from <a href="https://www.nexusmods.com/newvegas/mods/61141?tab=files">here</a>,
+				and install as before.
+			</p>
+			
+			<p>
+				download NPC's Sprint in Combat from <a href="https://www.nexusmods.com/newvegas/mods/68179?tab=files">here</a>,
+				and install as before.
+			</p>
+			
+			<p>
+				when installing more mods than this, use <b><a href="https://tes5edit.github.io/docs/6-themethod">The Method</a></b>
+				to ensure no conflicts.
+			</p>
+		</section>
+		
+		<section>
+			<h2>My Config</h2>
+			<p>
+				download my configs from <a href="https://github.com/DbpGaming/fallout-configs/archive/refs/heads/main.zip">here</a>
+				and install as before, do note what is said about them in the
+				<a href="https://github.com/DbpGaming/fallout-configs/blob/main/readme.txt">readme</a>
+				i'll continue trying to make them easier to understand and modify, and may make a section to the guide
+				dedicated for that.
+			</p>
+		</section>
+
+		<footer>
+			<a href="https://github.com/unix-supremacist/unix-supremacist.github.io">Source</a>
+			<a href="https://matrix.to/#/#the-federation:matrix.thisisjoes.site">Matrix</a>
+			<a href="https://unix-supermacist.github.io/rss.xml">Rss</a>
+			<a href="https://poa.st/@unix-supremacist">Poa.st</a>
+			<a href="https://odysee.com/@unix-supremacist:1?r=Fv3nZdM45aDCrjUYPmH1K3tR8tB3p8wc">Odysee</a>
+		</footer>
+	</body>
+</html>

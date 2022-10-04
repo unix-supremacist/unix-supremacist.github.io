@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<title>Unix Supremacist's Website</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="../styles.css">
+	</head>
+
+	<body>
+		<header>
+			<a href="../" class="logo">#</a>
+			<input class="side-menu" type="checkbox" id="side-menu"/>
+			<label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
+			 <nav>
+				<ul class="menu">
+					<li><a href="../tech/websites">Cool Websites</a></li>
+					<li><a href="../tech/linuxguide">Unix Software</a></li>
+					<li><a href="../tech/vi">Smartutor</a></li>
+					<li><a href="../tech/config">Configuration</a></li>
+					<li><a href="../gaming/visualnovels">Visual Novels</a></li>
+					<li><a href="../gaming/game">Games</a></li>
+					<li><a href="../gaming/linuxgaming">Unix Gaming</a></li>
+					<li><a href="../media/anime">Anime</a></li>
+					<li><a href="../media/manga">Manga</a></li>
+					<li><a href="../media/youtube">Cool Videos</a></li>
+				</ul>
+			</nav>
+		</header>
+		<img src="../img/index.png" alt="banner">
+		
+		<section>
+			<h2>Configure Software</h2>
+			<a name="changebinsh">Change /bin/sh</a><p>
+				<a href="#checkbinsh">Check your /bin/sh</a> if it says whatever shell you want, it's set.
+				<a href="#checkinstalled">check your installed shells</a>, if not install your shell with your package manager on Arch
+				<code>pacman -S dash</code> as an example of dash on arch, <a href="linkshell">link your shell</a>
+			</p>
+			<a name="checkbinsh">Check your /bin/sh</a><p>
+				To check if dash is linked to /bin/sh run <code>ls -l /bin/sh</code>
+			</p>
+			<a name="checkinstalled">Check what shells are Installed</a><p>
+				Run <code>cat /etc/shells</code> to see what shells are installed
+			</p>
+			<a name="linkshell">Link shell to /bin/sh</a><p>
+				Use <code>ln -sf insertshellbinarynamehere /bin/sh</code> as root
+			</p>
+			<a name="changeshell">Changing your User Shell</a><p>
+				To change your user shell to whatever you want, find the shell on your system via <code>cat /etc/shells</code>
+				and then set it with <code>usermod --shell /bin/mksh YOURUSERNAME</code> as an example.
+			</p>
+			<a name="doas">Configure Doas</a><p>
+				Put <code>permit persist keepenv YOURUSERNAME as root</code> in your doas.conf, if you want
+				to know what everything does you can find information on the doas.conf online.
+			</p>
+			<a name="yaydoas">Yay with Doas</a><p>
+				To run <a href="linuxguide#yay">Yay</a> with with <a href="linuxguide#doas">Doas</a>, you need to make a shell alias,
+				simply add <code>alias yay='yay --sudo doas'</code> to your .kshrc, .bashrc, .mkshrc, or .zshrc
+			</p>
+			<a name="pacman">Configure Pacman</a><p>
+				You can add the <code>ParalellDownloads</code> option to your <code>/etc/pacman.conf</code> to allow parallel
+				downloading, i recommend setting this to your processor threads, for example on my system i added.
+				<code>ParalellDownloads = 6</code>
+				
+				also if you need to enable multilib
+				uncomment
+				<br><code>
+					[multilib]<br>
+					Include = /etc/pacman.d/mirrorlist
+				</code>
+			</p>
+			<a name="su">Alias SU</a><p>
+				add <code>alias sudo su root -c</code> and/or <code>alias doas su root -c</code> to your shells .shrc.
+			</p>
+			<a name="env">Set $env</a><p>
+				Add<br>
+				<code>
+					#ENV<br>
+					ENV="$HOME/.shrc"<br>
+					export ENV<br>
+				</code>
+				to your <code>/etc/profile</code>
+			</p>
+		</section>
+
+		<footer>
+			<a href="https://github.com/unix-supremacist/unix-supremacist.github.io">Source</a>
+			<a href="https://matrix.to/#/#the-federation:matrix.thisisjoes.site">Matrix</a>
+			<a href="https://unix-supermacist.github.io/rss.xml">Rss</a>
+			<a href="https://poa.st/@unix-supremacist">Poa.st</a>
+			<a href="https://odysee.com/@unix-supremacist:1?r=Fv3nZdM45aDCrjUYPmH1K3tR8tB3p8wc">Odysee</a>
+		</footer>
+	</body>
+
+</html>

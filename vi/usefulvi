@@ -1,0 +1,57 @@
+scroll
+	^f forward a screen
+	^b backward a screen
+	^d down half a screen
+	^u up half a screen
+	^e down one line
+	^y up one line
+	z[enter] snap cursor to top
+	z. snap cursor to center
+	z- snap cursor to bottom
+	/ find
+motion
+	w to next word
+	b to last word
+	e to end of next word
+	$ to end of line
+	[end] to end of line
+	0 to beginning of line
+	[home] to beginning of line
+	H to top of screem
+	M to middle of screen
+	L to bottom of screen
+	+ to first character of next line
+	[enter] to first character of next line
+	- to first character of last line
+	^ to first non blank character
+	_ to first non blank character
+	( to beginning of current sentence
+	) to beginning of next sentence
+	{ to beginning of current paragraph
+	} to beginning of next paragraph
+	[[ to beginning of current section
+	]] to beginning of next section
+action
+	(* means double tap to execute on line)
+	d* delete
+	D delete until end
+	x delete char
+	c* change
+	C change until end
+	r replace character
+	R replace line
+	s substitute
+	S change line
+	~ change case
+	p paste
+	y* yank
+	. repeat
+	u undo
+	j join lines
+mode
+	o enter insert mode at next line
+	a enter insert mode after cursor
+	i enter insert mode before cursor
+	O enter insert mode at last line
+	A enter insert mode at end of line
+	I enter insert mode at beginning of line
