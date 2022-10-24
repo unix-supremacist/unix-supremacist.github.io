@@ -1,0 +1,113 @@
+.TL
+The fall of Minecraft Modpacks
+.AU
+unix-supremacist
+.NH
+The Beginning
+.NH 2
+Feed The Beast
+.PP
+The first minecraft modpack i know if is the original feed the beast skyblock,
+for minecraft versions 1.0-1.2.5, it was just a skyblock map with a few mods,
+nothing to note as far as complexity but it seems to have been met with a
+overwhelmingly positive response and is where it all started.
+.NH 2
+Ultimate
+.PP
+After their success their were other modpacks, but the only thing worth mentioning
+is the original tekkit. FTB continued to make modpacks, which as far as i'm aware,
+lead to next FTB Ultimate
+.PP
+FTB Ultimate is probably where modpacks started to morph into the long progression
+based playstyle we see today, it had mods like IndustrialCraft, Gregtech,
+Thermal Expansion, Forestry, Railcraft, Buildcraft, RedPower, and much more.
+it was also a survival mode in a normal world not a skyblock, and is generally one
+of the packs the most people have nostalgia for.
+.PP
+Post Ultimate for FTB there were many packs, unhinged, unleashed, monster, etc, etc, and to great
+success though with the lack of RedPower some people still stayed behind on Ultimate.
+and ofcourse the community outside of FTB was rising, though i don't really feel a need
+to mention them in this post.
+.NH 2
+Infinity
+.PP
+In 1.7.10 FTB Released a few packs, none of them more noteworthy than Infinity.
+Infinity is a "Kitchen Sink" pack with basically everything you could imagine up to that
+point. you have IndustrialCraft, EnderIO, Thermal Expansion, Twilight Forest, Thaumcraft,
+Botania, in general if there was something you wanted to do, or a popular mod you wanted to
+play, it was there, and everything worked, though this isn't the reason Infinity is well
+known anyway
+.NH 2
+Evolved
+.PP
+In later updates Infinity was renamed Infinity Evolved and got a new concept introduced.
+gamemodes. expert mode changed how the game plays and tied mods together, and ported some
+of the original Gregtech nerfs into script form, it brought back the long progression of
+Ultimate to the praise of many, except it was even better, longer, and more fun.
+.NH
+Post 1.7.10
+.PP
+After 1.7.10 and the age of Infinity ended there was successors, Infinity Lite and FTB Beyond,
+but nothing stuck packs kept trying to scratch that itch and they did, for a lot of people,
+but thats how we got to the state of modded we are in now, people trying to scratch that itch,
+during this time a lot of people also found Gregtech 5, which is known for it's grind,
+this only accelerated the downward spiral of modpacks post Infinity.
+.NH
+The Problem
+.NH 2
+Playablity
+.PP
+You may ask what is the problem with modern modpacks how they are, you enjoy them and don't see
+the issue. if you do enjoy them, great that you do! the problem is right now that modpacks are
+very specialized for certain playstyles, you have sink packs that are just a ton of mods without
+a single recipe change making them extremely unbalanced. you have expert packs where every recipe
+is changed and the pack takes months to complete. with this not only is finding good packs in your
+style hard, it's also hard to find packs you can play with your friends and you all agree on it,
+for us who don't like singleplayer and don't care for most of these modern packs, it makes it
+extremely difficult to play modpacks.
+.PP
+A great example of this problem is Gregtech New Horizons, and AllTheMods, both are fine packs in
+their own way, but have major issues for me to actually play them, AllTheMods (refering to the 1.12
+version) is unbalanced and is hard for me to take seriously, not to mention can be a short pack for
+the same reasons, Gregtech New Horizons is the exact opposite, it's so long it's hard for me to
+personally not get bored, plus my friends will definitely get bored, so it's hard to ever get a
+playthrough going, these packs are fine for their audiences, but why do they have to be the mainstream?
+.NH 2
+Performance
+.PP
+Generally modern packs have poor performance this comes down to a mix between incompetence and wanting
+to just throw every mod under the sun at a pack, it just doesn't work. most 1.12 packs use 4-8gb of ram,
+to me this is unacceptable along with the low framerates and low tps,
+.NH
+The Solution
+.NH 2
+Playablity
+.PP
+Making packs that are balanced selectively like FTB Infinity Evolved was the normal, this way
+everyone can play, you can have long strings of progression without making everything grindy,
+hell you could even limit it to certain mods, or just OP items. that way everyone can have fun,
+no bullshit required.
+.NH 2
+Performance
+.PP
+For 1.12 just checking your mods goes a long way, most memory usage and poor performance is caused by
+one or two mods being silly, example of mods that are bad on 1.12 would be, EnderIO, Mekanism,
+NuclearCraft, TerraFirmaCraft, AdventOfAcension, Binnie's Mods, and a few others, generally
+this is just quality assurance shit people fail at.
+.NH
+Extra Notes
+.NH 2
+TestPackPleaseIgnore
+.PP
+Another great pack at doing balance and it was even before infinity just less popular, is
+TestPackPleaseIgnore, it's basically everything infinity is but with less nerfs and long tech
+trees, and more just balancing out OP items, it also has more mods like Gregtech 4, and
+Ars Magica, definitely a treat and a prime example of how to do things.
+.NH 2
+AllOfFabric3
+.PP
+In modern times one pack that manages to strike this balance pretty well, that i don't like over
+modlist stablity reasons, is AllOfFabric3, it has basically every popular fabric mod, performs
+well over optimization mods and a half decently managed modlist, OP items are tweaked, with
+Modern Industrialization filling the progression, it fills the itch more than any other sink or
+"expert" pack does at the moment.
