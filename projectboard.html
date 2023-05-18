@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<title>Unix Supremacist's Website</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="styles.css">
+	</head>
+
+	<body>
+		<header>
+			<a href="/" class="logo">#</a>
+			<input class="side-menu" type="checkbox" id="side-menu"/>
+			<label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
+			 <nav>
+				<ul class="menu">
+					<li><a href="tech/linuxguide">Unix Software</a></li>
+					<li><a href="tech/vi">Smartutor</a></li>
+					<li><a href="tech/config">Configuration</a></li>
+					<li><a href="weebshit">Weebshit</a></li>
+					<li><a href="projectboard">Project Board</a></li>
+					<li><a href="gaming/linuxgaming">Unix Gaming</a></li>
+					<li><a href="tech/websites">Others</a></li>
+				</ul>
+			</nav>
+		</header>
+		<img src="img/index.png" alt="banner">
+
+		<section>
+			<h2>This is the Project Board</h2><p>
+				this is a little page for projects i'm working on, to make it easier
+				to ask for help, and to keep progress in the future.
+			</p>
+
+			<a href="https://codeberg.org/unix-gaming/LightVN">LightVN</a><p>
+				LightVN is a visual novel engine i'm working on written in pure C99 using lua and raylib,
+				works on openbsd, i may work on a vita port.
+				i currently need help with the game loop a few things.
+
+				pausing the execution of lua after a "scene" is built.
+				lerping positions for smoother animations.
+				etc.
+
+				if anyone is interested in porting to other platforms as well that would be great and i'll help.
+			</p>
+
+			<a href="https://codeberg.org/unix-gaming/raylib-openbsd">raylib openbsd port</a><p>
+				a slightly modified verison of raylib (just modified cmake) so that it builds on openbsd.
+				made for LightVN.
+			</p>
+
+			<a href="https://codeberg.org/unix-gaming/zelda3">Zelda3<a><p>
+				a modified version of the zelda3 pc port, forked to run on openbsd, i eventually
+				want to get 21:9 working and make a bmake compatible buildscript and migrate the current
+				one to a gnumakefile, if i can i'll try to get all of these things accepted as PRs upstream.
+			</p>
+
+			<a href="https://codeberg.org/unix-gaming/sm64-port">SM64-port<a><p>
+				a modified version of the sm64 pc port, forked to run on openbsd, same as above but no 21:9,
+				and theres a bit more work todo, like merging ultrasm64 features, etc.
+			</p>
+
+			<span>Ship of harkinian (ocarina of time pc port)</span><p>
+				i tried for a bit to get this working on openbsd, no luck so far, i plan to continue working on it
+				at some point, the main issue seems to be it locating SDL2.
+			</p>
+		</section>
+
+		<footer>
+			<a href="mailto:unixsupremacist@tfwno.gf">Email Me</a>
+			<a href="https://github.com/unix-supremacist/unix-supremacist.github.io">Source</a>
+			<a href="https://matrix.to/#/#the-federation:matrix.thisisjoes.site">Matrix</a>
+			<a href="https://unix-supermacist.github.io/rss.xml">Rss</a>
+			<a href="https://poa.st/@unix-supremacist">Poa.st</a>
+			<a href="https://odysee.com/@unix-supremacist:1?r=Fv3nZdM45aDCrjUYPmH1K3tR8tB3p8wc">Odysee</a>
+			<a href="https://www.youtube.com/channel/UCpAIvPUW1ZF8kkaXD4kQoOQ">Youtube</a>
+		</footer>
+	</body>
+</html>
