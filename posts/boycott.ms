@@ -70,4 +70,4 @@ Boycott every platform that does anything to screw you over, and any time you ca
 .SH
 MY PLATFORM DOESN'T HAVE AN ALTERNATIVE!
 .PP
-there's a solution to this problem, touch grass, if you think you can't deal without an online platform, speed more time in real life.
+there's a solution to this problem, touch grass, if you think you can't deal without an online platform, spend more time in real life.
