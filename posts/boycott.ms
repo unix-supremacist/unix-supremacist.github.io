@@ -1,4 +1,3 @@
-.so macros
 .TL
 Boycott Everything
 .AU
