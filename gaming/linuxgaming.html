@@ -1,249 +1,265 @@
 <!DOCTYPE html>
 <html lang="en">
 
-	<head>
-		<title>Unix Supremacist's Website</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" href="../styles.css">
-	</head>
+<head>
+	<title>Unix Supremacist's Website</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../styles.css">
+</head>
 
-	<body>
-		<header>
-			<a href="../" class="logo">#</a>
-			<input class="side-menu" type="checkbox" id="side-menu"/>
-			<label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
-			 <nav>
-				<ul class="menu">
-					<li><a href="../tech/linuxguide">Unix Software</a></li>
-					<li><a href="../tech/vi">Smartutor</a></li>
-					<li><a href="../tech/config">Configuration</a></li>
-					<li><a href="../weebshit">Weebshit</a></li>
-					<li><a href="../projectboard">Project Board</a></li>
-					<li><a href="../gaming/linuxgaming">Unix Gaming</a></li>
-					<li><a href="../tech/websites">Others</a></li>
-				</ul>
-			</nav>
-		</header>
-		<img src="../img/linuxgaming.png" alt="banner">
+<body>
+	<header>
+		<a href="../" class="logo">#</a>
+		<input class="side-menu" type="checkbox" id="side-menu" />
+		<label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
+		<nav>
+			<ul class="menu">
+				<li><a href="../tech/linuxguide">Unix Software</a></li>
+				<li><a href="../tech/vi">Smartutor</a></li>
+				<li><a href="../tech/config">Configuration</a></li>
+				<li><a href="../weebshit">Weebshit</a></li>
+				<li><a href="../projectboard">Project Board</a></li>
+				<li><a href="../gaming/linuxgaming">Unix Gaming</a></li>
+				<li><a href="../tech/websites">Others</a></li>
+			</ul>
+		</nav>
+	</header>
+	<img src="../img/linuxgaming.png" alt="banner">
 
 
 
-		
-		<section>
-			<h2>Before we start</h2>
-			
-			<p>
-				this will be a guide of what i know about gaming on unix operating systems,
-				this will mostly apply to linux, but freebsd should be the same, and i'll mention
-				some things for openbsd.
-			</p>
-			
-			<p>
-				ideally you have some understanding of unix operating systems already,
-				and potentionally windows operating systems, because we will be using wine alot.
-			</p>
-		</section>
-		
-		<section>
-			<h2>Emulation</h2>
-			
-			<p>
-				this section will cover emulation of retro consoles, on unix like operating systems,
-				this section will be the easiest one for openbsd users to follow.
-			</p>
-			
-			<h3>Mednafen</h3><p>
-				mednafen is the primary emulator we will be using today, because it supports
-				Apple II/II+, Atari Lynx, Neo Geo Pocket (Color), WonderSwan, GameBoy (Color),
-				GameBoy Advance, Nintendo Entertainment System, Super Nintendo Entertainment System/Super Famicom,
-				Virtual Boy, PC Engine/TurboGrafx 16 (CD), SuperGrafx, PC-FX, Sega Game Gear,
-				Sega Genesis/Megadrive, Sega Master System, Sega Saturn (experimental, x86_64 only),
-				Sony PlayStation, while also being avaible a ton of platforms.
-			</p>
-			
-			<p>
-				install mednafen with your package manager.
-			</p>
-			
-			<b>
-				NOTE YOU ONLY NEED TO COPY THE BIOS TO PLAY PS1 GAMES
-				AND THE CONFIG CHANGE IF YOU PLAN TO PLAY PS1 GAMES WITH ANALOG
-			</b>
-			
-			<p>
-				download the 
-				<a href="https://cdn.discordapp.com/attachments/836727775158206464/926181701003133008/scph5501.bin">no$psx bios</a>
-				and place it in <code>~/.mednafen/firmware/</code>
-			</p>
-			
-			<p>
-				after that is edit the mednafen config, found at <code>~/.mednafen/mednafen.cfg</code>
-				then change <code>psx.input.port1</code> to <code>DualShock</code>
-				and then save the file, this is all we needed to do.
-			</p>
-			
-			<p>
-				from here to configure controller bindings in the emulator, press <kbd>alt+shift</kbd>
-				then the controller number.
-			</p>
-			
-			<h3>mupen64plus</h3>
-			
-			<p>
-				mupen64plus can be installed with your package manager then install <code>mupen64plus-video-gliden64-git</code> on arch,
-				<br>edit <code>~/.config/mupen64plus/mupen64plus.cfg</code>, and change <code>VideoPlugin = "mupen64plus-video-rice.so"</code>
-				to <code>VideoPlugin = "mupen64plus-video-GLideN64.so"</code>,
-				you may also have to configure your controller here (TODO guide for controller cfg)
-			</p>
-		</section>
-		
-		<section>
-			<h2>Wine</h2><p>
-				this section covers running pc games in wine, and what tweaks may need to be done in order
-				to get certain games or sets of games running.
-			</p><p>
-				enable <a href="../tech/config#pacman">multilib</a> then run
-				<br><code>pacman -S wine wine-mono winetricks lib32-alsa-plugins lib32-libpulse lib32-openal</code><br>
-				<a href="https://wiki.archlinux.org/title/Vulkan">install the 64bit and 32bit vulkan drivers for your system.</a>
-				use winetricks to install dxvk <code>winetricks dxvk</code>
-			</p><p>
-				with the installation above most games should now run, lets fix a few that won't
-			</p>
-			
-			<h3>Trinoline</h3><p>
-				turn of special effects in the settings to prevent a crash
-			</p>
-			
-			<h3>Fate / Stay Night</h3><p>turn on skip movies to prevent a crash</p>
-			
-			<h3>Unity fix</h3><p>
-				run in a virtual desktop fullscreened or when you tab out all inputs won't work
-			</p>
 
-			<h3>Dracu Riot and other japanaese locale games</h3><p>
-				edit <code>/etc/locale.gen</code> and uncomment
-				<br><kbd>ja_JP.EUC-JP EUC-JP<br> ja_JP.UTF-8 UTF-8</kbd><br>
-				run <code>locale-gen</code> as root.
-				then use <code>LANG="ja_JP" wine dracuriot.exe</code> in the game directory.
-			</p>
-			
-			<h3>List of games that work in wine</h3>
-			<li>Fallout 3</li>
-			<li>Fallout - New Vegas</li>
-			<li>Terraria</li>
-			<li>TES3 - Morrowind</li>
-			<li>TES4 - Oblivion</li>
-			
-			<h3>List of vns that work in wine</h3>
-			<li>air</li>
-			<li>aokana Extra (use unity fix)</li>
-			<li>a sky full of star? (only tested in proton)</li>
-			<li>a sky full of stars fine days</li>
-			<li>atri</li>
-			<li>chronoclock</li>
-			<li>clannad</li>
-			<li>fate / Stay night</li>
-			<li>fate / Hollow Ataraxia</li>
-			<li>fureraba</li>
-			<li>hello, Good-bye (use unity fix)</li>
-			<li>higurashi</li>
-			<li>how to raise a wolf girl</li>
-			<li>the labyrinth of grisaia</li>
-			<li>the eden of grisaia</li>
-			<li>the afterglow of grisaia</li>
-			<li>the leisure of grisaia</li>
-			<li>the melody of grisaia</li>
-			<li>hapymaher</li>
-			<li>idol magical girl chiru chiru michiru</li>
-			<li>idol magical girl chiru chiru michiru 2</li>
-			<li>if my heart had wings (without the restoration patch)</li>
-			<li>island</li>
-			<li>kanon</li>
-			<li>kinkoi golden loveriche (use unity fix)</li>
-			<li>loca-love my commuting crush</li>
-			<li>loca-love my cute roommate</li>
-			<li>loca-live my pure priestess</li>
-			<li>maitetsu</li>
-			<li>majikoi</li>
-			<li>onii kiss onii-chan, where's my kiss</li>
-			<li>remember 11</li>
-			<li>riddle joker</li>
-			<li>sabbat of the witch</li>
-			<li>sankaku renai love triangle trouble</li>
-			<li>senren banka</li>
-			<li>sugar style</li>
-			<li>tomoyo after</li>
-			<li>trinoline</li>
-			<li>yukikoi melt</li>
-			<li>dracu riot(use above fix)</li>
-			
-			<h3>List of games that don't work in wine</h3>
-			
-			<li>Making Lovers</li>
-			<li>newton and the apple tree (crashes midway on multiple routes)</li>
-			<li>nanario reincarnation (crashes before you can get to the first route)</li>
-		</section>
-		
-		<section>
-			<h2>Engine Ports</h2>
-			<p>this section is for games that have a unix/linux engine port</p>
-			
-			<h3>Morrowind</h3>
-			<p>the openmw project allows you to play morrowind natively on linux</p>
-			<p>todo: openmw tutorial</p>
-			
-			<h3>Air, Clannad, Kanon, Tomoyo After, etc</h3>
-			<p>rlvm allows you to play keyvns using the reallive engine on linux</p>
-			<p>todo: rlvm tutorial</p>
-			
-			<h3>Half Life, Blue Shift, Opposing Force, Death Match, Counter Strike</h3>
-			<p>xash3d-fwgs allows you to play gold-src games on linux</p>
-			<p>todo: xash3d tutorial</p>
-			
-			<h3>Any nscripter Game</h3>
-			<p>onscripter allows you to play any nscriptor engine game on linux</p>
-			<p>todo: onscripter tutorial</p>
-			
-			<h3>Tomb Raider (1-5)</h3>
-			<p>opentomb allows you to play tomb raider 1-5 on linux</p>
-			<p>todo: opentomb tutorial</p>
+	<section>
+		<h2>Before we start</h2>
 
-			<h3><a href="https://github.com/RobertBeckebans/RBDOOM-3-BFG">RBDOOM-3-BFG</a></h3><p>
-				play doom 3 bfg including doom 1 and doom 2 on linx.
-			</p><p>todo: rbdoom tutorial.</p>
-		</section>
-		
-		<section>
-			<h2>Native Linux Games</h2>
-			<p>this is a list of games that are native to linux</p>
-			
-			<li>FreeCIV</li>
-			<li>Minecraft</li><p>TODO multimc section.</p>
-			<li>OpenRA</li>
-			<li>OpenTTD</li>
-			<li>Any Valve Game (except left 4 dead, TODO: proper list)</li>
-			<li>Turok</li>
-			<li>Turok 2: Seeds of Evil</li>
-			<li>Black Mesa</li>
-			<li>Tomb Raider (2013)</li>
-			<li>OpenArena</li>
-			<li>Etterna</li>
-			<li>Katawa Shoujo</li>
-			<li>OpenRCT2</li>
-			<li>RuneLite</li>
-			<li>0 A.D.</li>
-			<li>SuperTux</li>
-			<li>FreeSweep</li>
-			<li>SuperTuxKart</li>
-		</section>
+		<p>
+			this will be a guide of what i know about gaming on unix operating systems,
+			this will mostly apply to linux, but freebsd should be the same, and i'll mention
+			some things for openbsd.
+		</p>
 
-		<footer>
-			<a href="mailto:unixsupremacist@tfwno.gf">Email Me</a>
-			<a href="https://github.com/unix-supremacist/unix-supremacist.github.io">Source</a>
-			<a href="https://matrix.to/#/#the-federation:matrix.thisisjoes.site">Matrix</a>
-			<a href="https://unix-supermacist.github.io/rss.xml">Rss</a>
-			<a href="https://poa.st/@unix-supremacist">Poa.st</a>
-			<a href="https://www.youtube.com/channel/UCpAIvPUW1ZF8kkaXD4kQoOQ">Youtube</a>
-		</footer>
-	</body>
+		<p>
+			ideally you have some understanding of unix operating systems already,
+			and potentionally windows operating systems, because we will be using wine alot.
+		</p>
+	</section>
+
+	<section>
+		<h2>Emulation</h2>
+
+		<p>
+			this section will cover emulation of retro consoles, on unix like operating systems,
+			this section will be the easiest one for openbsd users to follow.
+		</p>
+
+		<h3>Mednafen</h3>
+		<p>
+			mednafen is the primary emulator we will be using today, because it supports
+			Apple II/II+, Atari Lynx, Neo Geo Pocket (Color), WonderSwan, GameBoy (Color),
+			GameBoy Advance, Nintendo Entertainment System, Super Nintendo Entertainment System/Super Famicom,
+			Virtual Boy, PC Engine/TurboGrafx 16 (CD), SuperGrafx, PC-FX, Sega Game Gear,
+			Sega Genesis/Megadrive, Sega Master System, Sega Saturn (experimental, x86_64 only),
+			Sony PlayStation, while also being avaible a ton of platforms.
+		</p>
+
+		<p>
+			install mednafen with your package manager.
+		</p>
+
+		<b>
+			NOTE YOU ONLY NEED TO COPY THE BIOS TO PLAY PS1 GAMES
+			AND THE CONFIG CHANGE IF YOU PLAN TO PLAY PS1 GAMES WITH ANALOG
+		</b>
+
+		<p>
+			download the
+			<a href="https://cdn.discordapp.com/attachments/836727775158206464/926181701003133008/scph5501.bin">no$psx
+				bios</a>
+			and place it in <code>~/.mednafen/firmware/</code>
+		</p>
+
+		<p>
+			after that is edit the mednafen config, found at <code>~/.mednafen/mednafen.cfg</code>
+			then change <code>psx.input.port1</code> to <code>DualShock</code>
+			and then save the file, this is all we needed to do.
+		</p>
+
+		<p>
+			from here to configure controller bindings in the emulator, press <kbd>alt+shift</kbd>
+			then the controller number.
+		</p>
+
+		<h3>mupen64plus</h3>
+
+		<p>
+			mupen64plus can be installed with your package manager then install
+			<code>mupen64plus-video-gliden64-git</code> on arch,
+			<br>edit <code>~/.config/mupen64plus/mupen64plus.cfg</code>, and change
+			<code>VideoPlugin = "mupen64plus-video-rice.so"</code>
+			to <code>VideoPlugin = "mupen64plus-video-GLideN64.so"</code>,
+			you may also have to configure your controller here (TODO guide for controller cfg)
+		</p>
+	</section>
+
+	<section>
+		<h2>Wine</h2>
+		<p>
+			this section covers running pc games in wine, and what tweaks may need to be done in order
+			to get certain games or sets of games running.
+		</p>
+		<p>
+			enable <a href="../tech/config#pacman">multilib</a> then run
+			<br><code>pacman -S wine wine-mono winetricks lib32-alsa-plugins lib32-libpulse lib32-openal</code><br>
+			<a href="https://wiki.archlinux.org/title/Vulkan">install the 64bit and 32bit vulkan drivers for your
+				system.</a>
+			use winetricks to install dxvk <code>winetricks dxvk</code>
+		</p>
+		<p>
+			with the installation above most games should now run, lets fix a few that won't
+		</p>
+
+		<h3>Trinoline</h3>
+		<p>
+			turn of special effects in the settings to prevent a crash
+		</p>
+
+		<h3>Fate / Stay Night</h3>
+		<p>turn on skip movies to prevent a crash</p>
+
+		<h3>Unity fix</h3>
+		<p>
+			run in a virtual desktop fullscreened or when you tab out all inputs won't work
+		</p>
+
+		<h3>Dracu Riot and other japanaese locale games</h3>
+		<p>
+			edit <code>/etc/locale.gen</code> and uncomment
+			<br><kbd>ja_JP.EUC-JP EUC-JP<br> ja_JP.UTF-8 UTF-8</kbd><br>
+			run <code>locale-gen</code> as root.
+			then use <code>LANG="ja_JP" wine dracuriot.exe</code> in the game directory.
+		</p>
+
+		<h3>List of games that work in wine</h3>
+		<li>Fallout 3</li>
+		<li>Fallout - New Vegas</li>
+		<li>Terraria</li>
+		<li>TES3 - Morrowind</li>
+		<li>TES4 - Oblivion</li>
+
+		<h3>List of vns that work in wine</h3>
+		<li>air</li>
+		<li>aokana Extra (use unity fix)</li>
+		<li>a sky full of star? (only tested in proton)</li>
+		<li>a sky full of stars fine days</li>
+		<li>atri</li>
+		<li>chronoclock</li>
+		<li>clannad</li>
+		<li>fate / Stay night</li>
+		<li>fate / Hollow Ataraxia</li>
+		<li>fureraba</li>
+		<li>hello, Good-bye (use unity fix)</li>
+		<li>higurashi</li>
+		<li>how to raise a wolf girl</li>
+		<li>the labyrinth of grisaia</li>
+		<li>the eden of grisaia</li>
+		<li>the afterglow of grisaia</li>
+		<li>the leisure of grisaia</li>
+		<li>the melody of grisaia</li>
+		<li>hapymaher</li>
+		<li>idol magical girl chiru chiru michiru</li>
+		<li>idol magical girl chiru chiru michiru 2</li>
+		<li>if my heart had wings (without the restoration patch)</li>
+		<li>island</li>
+		<li>kanon</li>
+		<li>kinkoi golden loveriche (use unity fix)</li>
+		<li>loca-love my commuting crush</li>
+		<li>loca-love my cute roommate</li>
+		<li>loca-live my pure priestess</li>
+		<li>maitetsu</li>
+		<li>majikoi</li>
+		<li>onii kiss onii-chan, where's my kiss</li>
+		<li>remember 11</li>
+		<li>riddle joker</li>
+		<li>sabbat of the witch</li>
+		<li>sankaku renai love triangle trouble</li>
+		<li>senren banka</li>
+		<li>sugar style</li>
+		<li>tomoyo after</li>
+		<li>trinoline</li>
+		<li>yukikoi melt</li>
+		<li>dracu riot(use above fix)</li>
+
+		<h3>List of games that don't work in wine</h3>
+
+		<li>Making Lovers</li>
+		<li>newton and the apple tree (crashes midway on multiple routes)</li>
+		<li>nanario reincarnation (crashes before you can get to the first route)</li>
+	</section>
+
+	<section>
+		<h2>Engine Ports</h2>
+		<p>this section is for games that have a unix/linux engine port</p>
+
+		<h3>Morrowind</h3>
+		<p>the openmw project allows you to play morrowind natively on linux</p>
+		<p>todo: openmw tutorial</p>
+
+		<h3>Air, Clannad, Kanon, Tomoyo After, etc</h3>
+		<p>rlvm allows you to play keyvns using the reallive engine on linux</p>
+		<p>todo: rlvm tutorial</p>
+
+		<h3>Half Life, Blue Shift, Opposing Force, Death Match, Counter Strike</h3>
+		<p>xash3d-fwgs allows you to play gold-src games on linux</p>
+		<p>todo: xash3d tutorial</p>
+
+		<h3>Any nscripter Game</h3>
+		<p>onscripter allows you to play any nscriptor engine game on linux</p>
+		<p>todo: onscripter tutorial</p>
+
+		<h3>Tomb Raider (1-5)</h3>
+		<p>opentomb allows you to play tomb raider 1-5 on linux</p>
+		<p>todo: opentomb tutorial</p>
+
+		<h3><a href="https://github.com/RobertBeckebans/RBDOOM-3-BFG">RBDOOM-3-BFG</a></h3>
+		<p>
+			play doom 3 bfg including doom 1 and doom 2 on linx.
+		</p>
+		<p>todo: rbdoom tutorial.</p>
+	</section>
+
+	<section>
+		<h2>Native Linux Games</h2>
+		<p>this is a list of games that are native to linux</p>
+
+		<li>FreeCIV</li>
+		<li>Minecraft</li>
+		<p>TODO multimc section.</p>
+		<li>OpenRA</li>
+		<li>OpenTTD</li>
+		<li>Any Valve Game (except left 4 dead, TODO: proper list)</li>
+		<li>Turok</li>
+		<li>Turok 2: Seeds of Evil</li>
+		<li>Black Mesa</li>
+		<li>Tomb Raider (2013)</li>
+		<li>OpenArena</li>
+		<li>Etterna</li>
+		<li>Katawa Shoujo</li>
+		<li>OpenRCT2</li>
+		<li>RuneLite</li>
+		<li>0 A.D.</li>
+		<li>SuperTux</li>
+		<li>FreeSweep</li>
+		<li>SuperTuxKart</li>
+	</section>
+
+	<footer>
+		<a href="mailto:unixsupremacist@tfwno.gf">Email Me</a>
+		<a href="https://github.com/unix-supremacist/unix-supremacist.github.io">Source</a>
+		<a href="https://matrix.to/#/#the-federation:matrix.thisisjoes.site">Matrix</a>
+		<a href="https://unix-supermacist.github.io/rss.xml">Rss</a>
+		<a href="https://poa.st/@unix-supremacist">Poa.st</a>
+		<a href="https://www.youtube.com/channel/UCpAIvPUW1ZF8kkaXD4kQoOQ">Youtube</a>
+	</footer>
+</body>
+
 </html>

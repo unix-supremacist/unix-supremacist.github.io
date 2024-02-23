@@ -1,30 +1,35 @@
-:root{
-    --bg: #282828;
-    --nav: #202020;
-    --gray: #85888C;
-    --main: #56b9ff;
-    --sec:#a0f4ff;
+:root {
+	--bg: #282828;
+	--nav: #202020;
+	--gray: #85888C;
+	--main: #56b9ff;
+	--sec: #a0f4ff;
 }
 
-header, ul, li, header a{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+header,
+ul,
+li,
+header a {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
-body, .menu a:hover{
-    background-color: var(--bg);
+body,
+.menu a:hover {
+	background-color: var(--bg);
 }
 
-a{
-    text-decoration: none;
+a {
+	text-decoration: none;
 }
 
-ul{
-    list-style: none;
+ul {
+	list-style: none;
 }
 
-p, b {
+p,
+b {
 	color: #a89984;
 }
 
@@ -32,144 +37,165 @@ kbd {
 	background-color: black;
 }
 
-a:link, a, h1, h2, h3, li{
-	color:var(--main);
+a:link,
+a,
+h1,
+h2,
+h3,
+li {
+	color: var(--main);
 }
 
-h1{
+h1 {
 	font-size: xx-large;
 }
 
-footer, .posts, h1{
+footer,
+h1 {
 	text-align: center;
 }
 
-footer, .posts, h2 {
+footer,
+h2 {
 	font-size: x-large;
 }
 
-a:visited, a:hover, a:active, span{
-	color:var(--sec);
+a:visited,
+a:hover,
+a:active,
+span {
+	color: var(--sec);
 }
 
-nav, header{
-    background-color: var(--nav);
+nav,
+header {
+	background-color: var(--nav);
 }
 
-img, .menu a{
-    display: block;
+img,
+.menu a {
+	display: block;
 }
 
 img {
-	margin:auto;
+	margin: auto;
 	max-width: 100%;
-	height:auto;
-    max-height: 225px;
+	height: auto;
+	max-height: 225px;
 }
 
-nav, header{
-    width: 100%;
+nav,
+header {
+	width: 100%;
 }
 
-nav{
-    overflow: hidden;
+nav {
+	overflow: hidden;
 }
 
-.menu a{
-    padding: 10px 15px;
+.menu a {
+	padding: 10px 15px;
 }
 
-section, h1{
+section,
+h1 {
 	max-width: 1024px;
 	margin: auto;
 }
 
-nav{
-    max-height: 0;
-    transition: max-height .5s ease-out;
+nav {
+	max-height: 0;
+	transition: max-height .5s ease-out;
 }
 
-header{
-    box-shadow: 1px 1px 5px 0px var(--gray);
-    position: sticky;
-    top: 0;
+header {
+	box-shadow: 1px 1px 5px 0px var(--gray);
+	position: sticky;
+	top: 0;
 }
 
-.logo{
-    display: inline-block;
-    color: var(--main);
-    font-size: 34px;
-    margin-left: 10px;
+.logo {
+	display: inline-block;
+	color: var(--main);
+	font-size: 34px;
+	margin-left: 10px;
 }
 
-.hamb{
-    cursor: pointer;
-    float: right;
-    padding: 20px 10px;
+.hamb {
+	cursor: pointer;
+	float: right;
+	padding: 20px 10px;
 }
 
 .hamb-line {
-    background: var(--main);
-    display: block;
-    height: 2px;
-    position: relative;
-    width: 24px;
+	background: var(--main);
+	display: block;
+	height: 2px;
+	position: relative;
+	width: 24px;
 }
 
 .hamb-line::before,
-.hamb-line::after{
-    background: var(--main);
-    content: '';
-    display: block;
-    height: 100%;
-    position: absolute;
-    transition: all .2s ease-out;
-    width: 100%;
+.hamb-line::after {
+	background: var(--main);
+	content: '';
+	display: block;
+	height: 100%;
+	position: absolute;
+	transition: all .2s ease-out;
+	width: 100%;
 }
-.hamb-line::before{
-    top: 5px;
+
+.hamb-line::before {
+	top: 5px;
 }
-.hamb-line::after{
-    top: -5px;
+
+.hamb-line::after {
+	top: -5px;
 }
 
 .side-menu {
-    display: none;
+	display: none;
 }
 
-.side-menu:checked ~ nav{
-    max-height: 100%;
+.side-menu:checked~nav {
+	max-height: 100%;
 }
-.side-menu:checked ~ .hamb .hamb-line {
-    background: transparent;
+
+.side-menu:checked~.hamb .hamb-line {
+	background: transparent;
 }
-.side-menu:checked ~ .hamb .hamb-line::before {
-    transform: rotate(-45deg);
-    top:0;
+
+.side-menu:checked~.hamb .hamb-line::before {
+	transform: rotate(-45deg);
+	top: 0;
 }
-.side-menu:checked ~ .hamb .hamb-line::after {
-    transform: rotate(45deg);
-    top:0;
+
+.side-menu:checked~.hamb .hamb-line::after {
+	transform: rotate(45deg);
+	top: 0;
 }
 
 /* minimum 768 */
 @media (min-width: 1300px) {
-    nav{
-        max-height: none;
-        top: 0;
-        position: relative;
-        float: right;
-        width: fit-content;
-    }
-    .menu li{
-        float: left;
-    }
-    .menu a:hover{
-        background-color: transparent;
-        color: var(--sec);
-    }
+	nav {
+		max-height: none;
+		top: 0;
+		position: relative;
+		float: right;
+		width: fit-content;
+	}
 
-    .hamb{
-        display: none;
-    }
+	.menu li {
+		float: left;
+	}
+
+	.menu a:hover {
+		background-color: transparent;
+		color: var(--sec);
+	}
+
+	.hamb {
+		display: none;
+	}
 }

@@ -1,155 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<title>Unix Supremacist's Website</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" href="../styles.css">
-	</head>
 
-	<body>
-		<header>
-			<a href="../" class="logo">#</a>
-			<input class="side-menu" type="checkbox" id="side-menu"/>
-			<label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
-			 <nav>
-				<ul class="menu">
-					<li><a href="../tech/linuxguide">Unix Software</a></li>
-					<li><a href="../tech/vi">Smartutor</a></li>
-					<li><a href="../tech/config">Configuration</a></li>
-					<li><a href="../weebshit">Weebshit</a></li>
-					<li><a href="../projectboard">Project Board</a></li>
-					<li><a href="../gaming/linuxgaming">Unix Gaming</a></li>
-					<li><a href="../tech/websites">Others</a></li>
-				</ul>
-			</nav>
-		</header>
-		<img src="../img/index.png" alt="banner">
+<head>
+	<title>Unix Supremacist's Website</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../styles.css">
+</head>
 
-		<section>
-			<h2>Operating Systems</h2>
-			<a name="OpenBSD" href="https://www.openbsd.org/"><b2>OpenBSD</b2></a><p>
-				A lot like FreeBSD but with more of a effort towards correct code, security on servers, and the
-				Unix philosphy, it's extremely hard to get working on a desktop and drivers are lacking, but if it works go
-				for it, it's atleast as good as FreeBSD in most cases
-			</p>
-			<a name="artix">Artix</a><p>
-				A fork one of the most versatile linux distributions around. it doesn't have a graphical user
-				enviroment by default, however it is easy to install one,
-				and it being a barebones system allows you to customize it way beyond most other distros.
-				not to mention, the AUR allows you to find basically anything you can dream of in terms of software.
-				it has a more difficult learning curve, but is well rounded, without systemd,
-				it also has releases with desktop enviroments preinstalled.
-			</p>
-		</section>
+<body>
+	<header>
+		<a href="../" class="logo">#</a>
+		<input class="side-menu" type="checkbox" id="side-menu" />
+		<label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
+		<nav>
+			<ul class="menu">
+				<li><a href="../tech/linuxguide">Unix Software</a></li>
+				<li><a href="../tech/vi">Smartutor</a></li>
+				<li><a href="../tech/config">Configuration</a></li>
+				<li><a href="../weebshit">Weebshit</a></li>
+				<li><a href="../projectboard">Project Board</a></li>
+				<li><a href="../gaming/linuxgaming">Unix Gaming</a></li>
+				<li><a href="../tech/websites">Others</a></li>
+			</ul>
+		</nav>
+	</header>
+	<img src="../img/index.png" alt="banner">
 
-		<section>
-			<h2>Shells</h2>
-			<a name="toysh">Toybox Toysh</a><p>
-				The remake of bash in toybox lightweight and fast, lacking features like tab completion and colors,
-				so is essentially dash for bash scripts at this point.
-			</p>
-			<a name="dash">Dash</a><p>
-				Debian Almquist SHell is the Debian port of ash, it's a super lightweight shell that's great for script
-				execution, if on artix, use dash-static-musl from the aur,
-				<a href="config#changebinsh">i highly recommend you link this to /bin/sh.</a>
-			</p>
-			<a name="ksh">ksh</a><p>
-				OpenBSD Korn Shell, one of the best shells on unix, extremely lightweight,
-				version of it generally doesn't matter oksh, loksh, mksh, pdksh,
-				but when on artix i recommend using the mksh-static from the AUR.
-				recommend using it as your user shell with dash as /bin/sh,
-				<a href="config#changeshell">how to change your user shell.</a>
-				<a href="config#env">you need to set your ENV var</a> to be able to config your .shrc.
-			</p>
-		</section>
+	<section>
+		<h2>Operating Systems</h2>
+		<a name="OpenBSD" href="https://www.openbsd.org/">
+			<b2>OpenBSD</b2>
+		</a>
+		<p>
+			A lot like FreeBSD but with more of a effort towards correct code, security on servers, and the
+			Unix philosphy, it's extremely hard to get working on a desktop and drivers are lacking, but if it works go
+			for it, it's atleast as good as FreeBSD in most cases
+		</p>
+		<a name="artix">Artix</a>
+		<p>
+			A fork one of the most versatile linux distributions around. it doesn't have a graphical user
+			enviroment by default, however it is easy to install one,
+			and it being a barebones system allows you to customize it way beyond most other distros.
+			not to mention, the AUR allows you to find basically anything you can dream of in terms of software.
+			it has a more difficult learning curve, but is well rounded, without systemd,
+			it also has releases with desktop enviroments preinstalled.
+		</p>
+	</section>
 
-		<section>
-			<h2>Terminal Software</h2>
-			<a name="doas">Doas</a><p>
-				Runs commands as another user, is super lightweight, great for single user pcs. also, <a href="config#doas">Conf Doas</a>.
-			</p>
-			<a name="vis">Vis</a><p>A text editor inspired by Vi, Vim, and plan9 Sam, based around Structural Expressions.</p>
-			<a name="nano">Nano</a><p>A text editor essentially GNU notepad.</p>
-			<a name="dvtm" href="https://github.com/DbpGaming/dvtm">dvtm</a><p>A multiplexer inspired by DWM</p>
-			<a>Gomuks</a><p>a terminal matrix client.</p>
-			<a href="https://github.com/DbpGaming/sopen">sopen</a><p>script i made to replace xdg-open.</p>
-			<a href="https://github.com/DbpGaming/sf">sf</a><p>script i made to quickly open files.</p>
-			<a href="https://github.com/DbpGaming/promptless">Promptless</a><p>posix shell script prompt thats easy to fork and implement into any shell.</p>
-			<a name="sfeed" href="https://github.com/DbpGaming/sfeed">sfeed</a><p>A suckless RSS feed reader</p>
-			<a name="sfeedc">sfeed curses</a><p>A simple RSS feed reader.</p>
-			<a name="links">Links2</a><p>A lynx like Web browser.</p>
-			<a name="yay">Yay</a><p>Yay is a AUR helper, also note, you need sudo or, <a href="config#yaydoas">Yay with Doas</a></p>
-			<a name="sfm" href="https://github.com/DbpGaming/sfm">sfm</a><p>A file manager.</p>
-			<a>Toybox Top</a><p>simple implementation of top, really nice.</p>
-			<a name="htop">Htop</a><p>A process/task manager, really low resource and simple.</p>
-			<a name="pfetch" href="https://github.com/DbpGaming/pfetch">pfetch</a><p>A simple system info Utility, inspired by screenfetch.</p>
-			<a>BVI</a><p>Binary VI, VI like hex editor.</p>
-			<a name="herbe">herbe</a><p>A notification bubble without a daemon can be piped into from tiramisu</p>
-			<a name="slmenu" href="https://github.com/mptre/pick">slmenu</a><p>Option selection, think cli dmenu.</p>
-			<a name=tiramisu>tiramisu</a><p>A notification daemon that can be piped into whatever you please.</p>
-				<!--
-			<a name="quvi" href="https://github.com/mogaal/quvi">quvi</a>
-			<a name="isync" href="https://isync.sourceforge.io/">isync</a>
-				-->
-		</section>
-		
-		<section>
-			<h2>X Software</h2>
+	<section>
+		<h2>Shells</h2>
+		<a name="toysh">Toybox Toysh</a>
+		<p>
+			The remake of bash in toybox lightweight and fast, lacking features like tab completion and colors,
+			so is essentially dash for bash scripts at this point.
+		</p>
+		<a name="dash">Dash</a>
+		<p>
+			Debian Almquist SHell is the Debian port of ash, it's a super lightweight shell that's great for script
+			execution, if on artix, use dash-static-musl from the aur,
+			<a href="config#changebinsh">i highly recommend you link this to /bin/sh.</a>
+		</p>
+		<a name="ksh">ksh</a>
+		<p>
+			OpenBSD Korn Shell, one of the best shells on unix, extremely lightweight,
+			version of it generally doesn't matter oksh, loksh, mksh, pdksh,
+			but when on artix i recommend using the mksh-static from the AUR.
+			recommend using it as your user shell with dash as /bin/sh,
+			<a href="config#changeshell">how to change your user shell.</a>
+			<a href="config#env">you need to set your ENV var</a> to be able to config your .shrc.
+		</p>
+	</section>
 
-			<a name="st" href="https://github.com/DbpGaming/st">st</a><p>Suckless terminal, light weight, scales poorly, but highly modable, great for hobbists.</p>
-			<a href="https://github.com/DbpGaming/dmenu">dmenu</a><p>simple menu for launching applications etc.</p>
-			<a name="sxiv" href="https://github.com/DbpGaming/sxiv">SXIV</a><p>Suckless X Image Viewer</p>
-			<a name="feh">Feh</a><p>Image Viewer.</p>
-			<a name="zathura">Zathura</a><p>Document Viewer, with modules for, cb(r/z), pdf, epub, djvu, and more.</p>
-			<a>MuPDF</a><p>PDF/EPUB/CBZ Reader</p>
-			<a name="librewolf">LibreWolf</a><p>Web browser, A fork of FireFox focused around privacy</p>
-			<a name="chromium">Degoogled Chromium</a><p>Web browser, De-botneted Chromium</p>
-			<a name="surf">Surf</a><p>Suckless Web Browser</p>
-			<a name="mpv">MPV</a><p>MPV is video and audio player forked from mplayer</p>
-			<a name="gimp">Gimp</a><p>GNU Image Manipulation Program, essentially GNU Photoshop</p>
-			<a name="github">Github Desktop</a><p>Gui git, sucks in some ways, great in others.</p>
-			<a name="xarchiver">XArchiver</a><p>Peak File Archival Performance.</p>
-			<a name="vscode">VSCodium</a><p>IDE, De-microsofted, better than anything else but is electron.</p>
-			<a name="xfburn">XFBurn</a><p>XFCE ImgBurn, lightweight disc burning application</p>
-			<a name="quickmedia">Quickmedia</a><p>
-				Quickmedia is a native, keyboard controlled, app for youtube,
-				4chan, soundcloud, matrix, and more.
-			</p>
-			<a name="gamehub">Gamehub</a><p>Game launcher, steam/playnite alternative, great emulator, and wine support</p>
-		</section>
+	<section>
+		<h2>Terminal Software</h2>
+		<a name="doas">Doas</a>
+		<p>
+			Runs commands as another user, is super lightweight, great for single user pcs. also, <a
+				href="config#doas">Conf Doas</a>.
+		</p>
+		<a name="vis">Vis</a>
+		<p>A text editor inspired by Vi, Vim, and plan9 Sam, based around Structural Expressions.</p>
+		<a name="micro">Micro</a>
+		<p>A golang text editor essentially TUI sublime</p>
+		<a name="lazygit">Lazygit</a>
+		<p>A golang tui git client</p>
+		<a name="dvtm" href="https://github.com/DbpGaming/dvtm">dvtm</a>
+		<p>A multiplexer inspired by DWM</p>
+		<a>Gomuks</a>
+		<p>a terminal matrix client.</p>
+		<!-- <a href="https://github.com/DbpGaming/sopen">sopen</a>
+		<p>script i made to replace xdg-open.</p>
+		<a href="https://github.com/DbpGaming/sf">sf</a>
+		<p>script i made to quickly open files.</p>-->
+		<a name="promptless">Promptless</a>
+		<p>posix shell script prompt thats easy to fork and implement into any shell.</p>
+		<a name="sfeed">sfeed</a>
+		<p>A suckless RSS feed reader</p>
+		<a name="sfeedc">sfeed curses</a>
+		<p>A simple RSS feed reader.</p>
+		<a name="links">Links2</a>
+		<p>A lynx like Web browser.</p>
+		<a name="yay">Yay</a>
+		<p>Yay is a AUR helper, also note, you need sudo or, <a href="config#yaydoas">Yay with Doas</a></p>
+		<a name="sfm">sfm</a>
+		<p>A file manager.</p>
+		<a>Toybox Top</a>
+		<p>simple implementation of top, really nice.</p>
+		<a name="htop">Htop</a>
+		<p>A process/task manager, really low resource and simple.</p>
+		<a name="smem">smem</a>
+		<p>easy way to check memory usage of a program accurately</p>
+		<a name="fastfetch">fastfetch</a>
+		<p>A simple system info Utility written in c, fast, inspired by neofetch.</p>
+		<a>BVI</a>
+		<p>Binary VI, VI like hex editor.</p>
+		<a name="herbe">wayherb</a>
+		<p>A notification bubble without a daemon can be piped into from tiramisu</p>
+		<a name="slmenu" href="https://github.com/mptre/pick">slmenu</a>
+		<p>Option selection, think cli dmenu.</p>
+		<a name="tiramisu">tiramisu</a>
+		<p>A notification daemon that can be piped into whatever you please.</p>
+	</section>
 
-		<section>
-			<h2>Emulators</h2>
-			<a name="dosemu">dosemu2</a><p>Dos Emulator, can be ran in your Terminal and other special things, sometimes useful.</p>
-			<a name="doxbox">doxbox-x</a><p>DosBox but actually accurate, can run windows 98 and basically any games.</p>
-			<a name="wine">WineGE</a><p>Windows compatiblity layer, has backports from proton, and other fixes by GE.</p>
-			<a name="anbox">Anbox</a><p>Android in a box, abusing the fact android uses Linux</p>
-			<a name="darling" href="https://www.darlinghq.org/">Darling</a><p>MacOS compatiblity layer.</p>
-			<a name="vice" href="https://vice-emu.sourceforge.io/">Vice</a><p>Commodore Emulation.</p>
-			<a name="ppsspp">PPSSPP</a><p>Really accurate and featured PSP emulator.</p>
-			<a name="pcsx2">PCSX2</a><p>The best PS2 emulator, not great but in a lot of cases the only option.</p>
-			<a name="rpcs3">RPCS3</a><p>The only PS3 Emulator.</p>
-			<a name="melonds">MelonDS</a><p>The best and most open DS emulator.</p>
-			<a name="dolphin">Dolphin</a><p>Decently Accurate but not perfect, and insanely featured GCN/WII emulator.</p>
-			<a name="m64p">Mupen64Plus</a><p>N64 emulator, minimal, supports plugins.</p>
-			<a name="gn64">GlideN64</a><p>A accurate but featured graphics plugin for N64 emulators, use with Mupen64Plus.</p>
-			<a name="yabause" href="https://yabause.org/">Yabause</a><p>Sega saturn emulator.</p>
-			<a name="reicast" href="https://reicast.com/">Reicast</a><p>Dreamcast emulator</p>
-			<a name="hatari" href="https://hatari.tuxfamily.org/">hatari</a><p>16bit Atari emulator.</p>
-			<a name="atari800" href="https://atari800.github.io/">atari800</a><p>8bit Atari emulator.</p>
-			<a name="mednafen">Mednafen</a><p>
-				Multisystem emulator, supports a ton of consoles while also being minimal
-				it includes a ps1, nes, gb, gbc, gba, a bsnes based snes emulator, and more.
-			</p>
-		</section>
+	<section>
+		<h2>X/Wayland Software</h2>
 
-		<footer>
-			<a href="mailto:unixsupremacist@tfwno.gf">Email Me</a>
-			<a href="https://github.com/unix-supremacist/unix-supremacist.github.io">Source</a>
-			<a href="https://matrix.to/#/#the-federation:matrix.thisisjoes.site">Matrix</a>
-			<a href="https://unix-supermacist.github.io/rss.xml">Rss</a>
-			<a href="https://poa.st/@unix-supremacist">Poa.st</a>
-			<a href="https://www.youtube.com/channel/UCpAIvPUW1ZF8kkaXD4kQoOQ">Youtube</a>
-		</footer>
-	</body>
+		<a name="st">st-wl</a>
+		<p>Suckless terminal, light weight, scales poorly, but highly modable, great for hobbists, but on wayland</p>
+		<a name="wterm">wterm</a>
+		<p>older ST wayland fork, seems to have moved away from wld.</p>
+		<a name="dmenu">dmenu-wayland</a>
+		<p>simple menu for launching applications etc.</p>
+		<a name="nsxiv">NSXIV</a>
+		<p>Suckless X Image Viewer</p>
+		<a name="zathura">Zathura</a>
+		<p>Document Viewer, with modules for, cb(r/z), pdf, epub, djvu, and more.</p>
+		<a>MuPDF</a>
+		<p>PDF/EPUB/CBZ Reader</p>
+		<a name="basilisk">Basilisk</a>
+		<p>Web browser, A fork of FireFox focused around XUL</p>
+		<a name="vlc">VLC</a>
+		<p>VLC is video and audio player</p>
+		<a name="mpv">MPV</a>
+		<p>MPV is video and audio player forked from mplayer</p>
+		<a name="gimp">Gimp</a>
+		<p>GNU Image Manipulation Program, essentially GNU Photoshop</p>
+		<a name="xarchiver">XArchiver</a>
+		<p>Peak File Archival Performance.</p>
+		<a name="vscode">VSCodium</a>
+		<p>IDE, De-microsofted, better than anything else but is electron.</p>
+		<a name="xfburn">XFBurn</a>
+		<p>XFCE ImgBurn, lightweight disc burning application</p>
+		<a name="lutris">Lutris</a>
+		<p>Game launcher, steam/playnite alternative, great emulator support, and wine support</p>
+	</section>
+
+	<section>
+		<h2>Emulators</h2>
+		<a name="dosemu">dosemu2</a>
+		<p>Dos Emulator, can be ran in your Terminal and other special things, sometimes useful.</p>
+		<a name="doxbox">doxbox-x</a>
+		<p>DosBox but actually accurate, can run windows 98 and basically any games.</p>
+		<a name="wine">WineGE</a>
+		<p>Windows compatiblity layer, has backports from proton, and other fixes by GE.</p>
+		<a name="anbox">Anbox</a>
+		<p>Android in a box, abusing the fact android uses Linux</p>
+		<a name="darling" href="https://www.darlinghq.org/">Darling</a>
+		<p>MacOS compatiblity layer.</p>
+		<a name="vice" href="https://vice-emu.sourceforge.io/">Vice</a>
+		<p>Commodore Emulation.</p>
+		<a name="ppsspp">PPSSPP</a>
+		<p>Really accurate and featured PSP emulator.</p>
+		<a name="pcsx2">PCSX2</a>
+		<p>The best PS2 emulator, not great but in a lot of cases the only option.</p>
+		<a name="rpcs3">RPCS3</a>
+		<p>The only PS3 Emulator.</p>
+		<a name="melonds">MelonDS</a>
+		<p>The best and most open DS emulator.</p>
+		<a name="dolphin">Dolphin</a>
+		<p>Decently Accurate but not perfect, and insanely featured GCN/WII emulator.</p>
+		<a name="m64p">Mupen64Plus</a>
+		<p>N64 emulator, minimal, supports plugins.</p>
+		<a name="gn64">GlideN64</a>
+		<p>A accurate but featured graphics plugin for N64 emulators, use with Mupen64Plus.</p>
+		<a name="yabause" href="https://yabause.org/">Yabause</a>
+		<p>Sega saturn emulator.</p>
+		<a name="reicast" href="https://reicast.com/">Reicast</a>
+		<p>Dreamcast emulator</p>
+		<a name="hatari" href="https://hatari.tuxfamily.org/">hatari</a>
+		<p>16bit Atari emulator.</p>
+		<a name="atari800" href="https://atari800.github.io/">atari800</a>
+		<p>8bit Atari emulator.</p>
+		<a name="mednafen">Mednafen</a>
+		<p>
+			Multisystem emulator, supports a ton of consoles while also being minimal
+			it includes a ps1, nes, gb, gbc, gba, a bsnes based snes emulator, and more.
+		</p>
+	</section>
+
+	<footer>
+		<a href="mailto:unixsupremacist@tfwno.gf">Email Me</a>
+		<a href="https://github.com/unix-supremacist/unix-supremacist.github.io">Source</a>
+		<a href="https://matrix.to/#/#the-federation:matrix.thisisjoes.site">Matrix</a>
+		<a href="https://unix-supermacist.github.io/rss.xml">Rss</a>
+		<a href="https://poa.st/@unix-supremacist">Poa.st</a>
+		<a href="https://www.youtube.com/channel/UCpAIvPUW1ZF8kkaXD4kQoOQ">Youtube</a>
+	</footer>
+</body>
+
 </html>

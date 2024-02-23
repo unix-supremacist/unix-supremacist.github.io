@@ -1,0 +1,115 @@
+first installing artix-plasma-openrc
+select no swap
+
+```sudo nano /etc/pacman.conf```
+
+uncomment the `ParallelDownloads` line and set it to what you want
+
+```sudo pacman -Syu```
+
+```sudo pacman -S plasma-wayland-session doas micro flatpak discover kvantum linux-zen linux-zen-headers``` (kvantum needs to be installed to fix a weird crash)
+
+```sudo micro /etc/doas.conf```
+
+type ```permit persist keepenv :wheel as root```
+
+```doas grub-mkconfig -o /boot/grub/grub.cfg```
+
+```doas micro /etc/enviroment```
+
+change QT_STYLE_OVERRIDE to kvantum
+
+reboot
+
+log in to plasma wayland
+
+```doas pacman -S artix-archlinux-support```
+```doas pacman-key --populate archlinux```
+```doas pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com```
+```doas pacman-key --lsign-key 3056513887B78AEB```
+```doas pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst' ```
+```doas pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst' ```
+
+```doas micro /etc/pacman.conf```
+
+add this to the pacman.conf repos
+
+```
+[chaotic-aur]
+Include = /etc/pacman.d/chaotic-mirrorlist 
+
+[omniverse]
+Server = https://artix.sakamoto.pl/omniverse/$arch
+Server = https://eu-mirror.artixlinux.org/omniverse/$arch
+Server = https://omniverse.artixlinux.org/$arch
+
+[extra]
+Include = /etc/pacman.d/mirrorlist-arch
+
+[community]
+Include = /etc/pacman.d/mirrorlist-arch
+
+[multilib]
+Include = /etc/pacman.d/mirrorlist-arch
+```
+
+```doas pacman -Syu```
+
+```doas pacman -Rns sudo neofetch artix-branding-base linux linux-headers nvidia-utils nvidia falkon```
+
+```doas pacman -S fastfetch zsh yay fakeroot git dash dashbinsh doas-sudo-shim```
+
+```doas grub-mkconfig -o /boot/grub/grub.cfg```
+
+expand the swap file to 16gb
+
+```doas dd if=/dev/zero of=/swapfile bs=1M count=16384 oflag=append conv=notrunc```
+```doas chmod 0600 /swapfile```
+```doas mkswap /swapfile```
+```doas swapon /swapfile```
+
+setup zsh
+
+```sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"```
+```git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions```
+```micro .zshrc```
+
+```usermod --shell /bin/zsh YOURUSERNAME```
+
+add a new line with ```fastfetch``` at line 3
+change the ```plugins=(git)``` line at line 74 to ```plugins=(git gitfast golang zsh-autosuggestions)```
+
+setup bismuth
+
+```yay -S kwin-bismuth-bin```
+
+System Settings>Window Management>Window Tiling>Behavior>Enable window tiling (enable this)
+System Settings>Window Management>Window Tiling>Appearance (i set all gaps to 10px)
+System Settings>Window Management>Window Behavior>Windows Actions>Modifier key (i change this to alt)
+
+installed a few games from flathub for testing
+https://flathub.org/apps/com.github.k4zmu2a.spacecadetpinball
+https://flathub.org/apps/com.katawa_shoujo.KatawaShoujo
+https://flathub.org/apps/org.supertuxproject.SuperTux
+https://flathub.org/apps/net.supertuxkart.SuperTuxKart
+https://flathub.org/apps/party.supertux.supertuxparty
+
+adding these as non steam games should just work, just click the add a game button in steam and you're off
+
+polymc
+
+```yay pacman -S polymc-qt5-bin```
+
+i installed `dracu-riot!` from my nas into a folder in `~/Games` and added it as a non steam game
+i ran these commands to install proton ge, note you will want to update these for the latest build
+```wget https://github.com/GloriousEggroll/proton-ge-custom/releases/download/GE-Proton8-25/GE-Proton8-25.tar.gz```
+```mkdir ~/.steam/root/compatibilitytools.d```
+```tar -xf GE-Proton8-25.tar.gz -C ~/.steam/root/compatibilitytools.d/```
+```rm GE-Proton8-25.tar.gz```
+to get it working i needed to click enable steam play for all other titles in `settings>compatiblitity` on steam
+and changed run other titles with, to the ge-proton i just installed.
+then after adding it as a non steam game, going to the compatiblity tab and checking force the use of a specific steam play compatibility tool
+now the reason i started with dracu-riot is it needs a japanese locale so add `LANG=ja_JP.UTF8 %command%` to the launch options
+then start the game, some specific games do not like fullscreen in wayland, dracu-riot is one of them,
+so you have to navigate the bar menu to disable fullscreen close the game, and reopen it
+
